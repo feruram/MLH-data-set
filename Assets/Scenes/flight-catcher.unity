@@ -519,6 +519,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1804329859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804329861}
+  - component: {fileID: 1804329860}
+  m_Layer: 0
+  m_Name: PortPlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1804329860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804329859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad43150bcdd4b445aa2b8e2072c4972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portPrefab: {fileID: 3154590196300961363, guid: e8fbe48261ff35749acb03eafffcd461, type: 3}
+  hanedaPortPrefab: {fileID: 1165357136163168936, guid: 8c44777ec342ed34486525adac5f1513, type: 3}
+  radius: 10
+  haneda_lat: 35.5523
+  haneda_lon: 139.78
+  haneda_name: HND
+--- !u!4 &1804329861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804329859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088375426
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,3 +741,4 @@ SceneRoots:
   - {fileID: 1623757524}
   - {fileID: 2088375430}
   - {fileID: 4099812627998103023}
+  - {fileID: 1804329861}
