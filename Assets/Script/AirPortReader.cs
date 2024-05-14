@@ -9,6 +9,7 @@ public class AirPortReader : MonoBehaviour
 {
     public GameObject portPrefab;
     public GameObject hanedaPortPrefab;
+    public GameObject parentObject;
     private TextAsset csvFile;
     public List<string[]> portDatas = new List<string[]>();
     public float radius = 10f;
@@ -36,7 +37,7 @@ public class AirPortReader : MonoBehaviour
             point = Quaternion.Euler(0, _lat, _lon) * point;
             var portObj = Instantiate(portPrefab, point, Quaternion.identity);
             portObj.name = _port;
-
+            portObj.transform.SetParent(parentObject.transform, true);
         }
 
         Vector3 hanedaPoint = new Vector3(radius, 0, 0);
