@@ -7,7 +7,7 @@ public class FlightinAir
 {
     public DateTime departure;
     public DateTime arrival;
-    public string originePort;
+    public string originPort;
     public string destinationPort;
     public string flightNumber;
 }
@@ -28,4 +28,10 @@ public class InAirData
     public string destinationAirport;
     public string actualDepartureTime;
     public string scheduledDepartureTime;
+}
+public class AirPort
+{
+    public float lat;
+    public float lon;
+    public string name;
 }

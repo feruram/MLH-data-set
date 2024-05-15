@@ -18,6 +18,7 @@ public class AirPortReader : MonoBehaviour
     public float haneda_lon=139.78f;
     public string haneda_name = "HND";
     private GameObject hanedaObj;
+    public List<AirPort> ports = new List<AirPort>();
     void Start()
     {
         mag = parentObject.transform.localScale.x;
@@ -36,6 +37,11 @@ public class AirPortReader : MonoBehaviour
             string _port = portDatas[i][0];
             float _lat = float.Parse(portDatas[i][1]);
             float _lon = float.Parse(portDatas[i][2]);
+            AirPort tempPort = new AirPort();
+            tempPort.name = _port;
+            tempPort.lat = _lat;
+            tempPort.lon = _lon;
+            ports.Add(tempPort);
             Vector3 point = new Vector3(20.2f * mag, 0, 0);
             point = Quaternion.Euler(0, _lat, _lon) * point;
             var portObj = Instantiate(portPrefab, point, Quaternion.identity);

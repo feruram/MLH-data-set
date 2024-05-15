@@ -21,10 +21,12 @@ public class DataGetter : MonoBehaviour
     public string yourComsumerKey = "c7d98943fdb5eb0daff0a1a573b844c1f5602ed2fd588708efce018615c0657b";
     public List<FlightinAir> inAir_list = new List<FlightinAir>();
     public float GettingSec = 10;
+    public FlightSimulator fs;
 
     private void Start()
     {
         Gettingdata(url_Departure + url_operator_ANA + url_FlightStatus_InAir + url_comsumerKey + yourComsumerKey);
+        isStarted = true;
     }
     private void Update()
     {
@@ -51,8 +53,8 @@ public class DataGetter : MonoBehaviour
         {
             yield return new WaitForSeconds(GettingSec);
             string nowTime = DateTime.Now.ToString("HH:mm");
-            Debug.Log(nowTime);
             Gettingdata(url_Departure + url_operator_ANA + "odpt:estimatedDepartureTime=" + nowTime + url_comsumerKey + yourComsumerKey);
+            
         }
     }
     private IEnumerator GetData(string URL)
@@ -105,13 +107,13 @@ public class DataGetter : MonoBehaviour
             tempData.departure = _departuredTime;
             tempData.arrival = _arrivalTime;
             string origine = (string)oneData["odpt:departureAirport"];
-            tempData.originePort = origine.Replace("odpt.Airport:", "");
+            tempData.originPort = origine.Replace("odpt.Airport:", "");
             string destination = (string)oneData["odpt:destinationAirport"];
             tempData.destinationPort = destination.Replace("odpt.Airport:", "");
             tempData.flightNumber = flightNum;
             inAir_list.Add(tempData);
+            fs.planeCreate(tempData);
         }
-        isStarted = true;
     }
     public void Show()
     {

@@ -6,19 +6,24 @@ using System;
 public class FlightSimulator : MonoBehaviour
 {
     public DataGetter dg;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public AirPortReader apr;
+    public GameObject planePrefab;
     // Update is called once per frame
-    void Update()
+    private AirPort originPort;
+    private AirPort destinationPort;
+    public void planeCreate(FlightinAir inAir)
     {
-        if (dg.isStarted&&!dg.isRunning)
+        foreach(AirPort port in apr.ports)
         {
-            dg.Show();
+            if (port.name == inAir.originPort)
+                originPort = port;
+            if (port.name == inAir.destinationPort)
+                destinationPort = port;
         }
+        Vector3 planePos = new Vector3(0, 0, 0);
+        PlaneController myPlane = Instantiate(planePrefab, planePos, Quaternion.Euler(0, originPort.lat, originPort.lon)).GetComponent<PlaneController>();
+        myPlane.originPort = originPort;
+        myPlane.destinationPort = destinationPort;
+        myPlane.myInfo = inAir;
     }
 }
