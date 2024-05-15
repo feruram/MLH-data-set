@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class FlightSimulator : MonoBehaviour
 {
-    public List<string> departure = new List<string>();
-    public List<string> arrival = new List<string>();
+    public DataGetter dg;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,9 @@ public class FlightSimulator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (dg.isStarted&&!dg.isRunning)
+        {
+            dg.Show();
+        }
     }
 }

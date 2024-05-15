@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 1804329861}
   - component: {fileID: 1804329860}
   - component: {fileID: 1804329862}
+  - component: {fileID: 1804329863}
   m_Layer: 0
   m_Name: AirManager
   m_TagString: Untagged
@@ -627,9 +628,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965642b8799c74944ab85d92a3e00062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url_FlightStatus_InAir_ANA: https://api.odpt.org/api/v4/odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:ANA&odpt:flightStatus=odpt.FlightStatus:InAir&acl:consumerKey=c7d98943fdb5eb0daff0a1a573b844c1f5602ed2fd588708efce018615c0657b
-  _textAsset: 
-  item_inAir: []
+  isStarted: 0
+  isRunning: 0
+  yourComsumerKey: c7d98943fdb5eb0daff0a1a573b844c1f5602ed2fd588708efce018615c0657b
+  GettingSec: 10
+--- !u!114 &1804329863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804329859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211f1f509c3f436458578f59c9761e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dg: {fileID: 1804329862}
 --- !u!1001 &4099812627998103023
 PrefabInstance:
   m_ObjectHideFlags: 0
