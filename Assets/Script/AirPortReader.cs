@@ -45,4 +45,5 @@ public class AirPortReader : MonoBehaviour
         var hanedaObj = Instantiate(hanedaPortPrefab, hanedaPoint, Quaternion.identity);
         hanedaObj.name = haneda_name;
     }
+
 }
