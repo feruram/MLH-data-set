@@ -39,7 +39,7 @@ public class AirPortReader : MonoBehaviour
             portObj.name = _port;
             portObj.transform.SetParent(parentObject.transform, true);
         }
-
+        Debug.Log("plot finished");
         Vector3 hanedaPoint = new Vector3(radius, 0, 0);
         hanedaPoint = Quaternion.Euler(0, haneda_lat, haneda_lon) * hanedaPoint;
         var hanedaObj = Instantiate(hanedaPortPrefab, hanedaPoint, Quaternion.identity);

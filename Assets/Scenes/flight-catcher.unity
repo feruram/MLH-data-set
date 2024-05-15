@@ -627,7 +627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965642b8799c74944ab85d92a3e00062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setUpData: 
+  url_FlightStatus_InAir_ANA: https://api.odpt.org/api/v4/odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:ANA&odpt:flightStatus=odpt.FlightStatus:InAir&acl:consumerKey=c7d98943fdb5eb0daff0a1a573b844c1f5602ed2fd588708efce018615c0657b
+  _textAsset: 
+  item_inAir: []
 --- !u!1001 &4099812627998103023
 PrefabInstance:
   m_ObjectHideFlags: 0

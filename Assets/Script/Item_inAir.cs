@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-//yusuke
 [Serializable]
 public class Item_inAir
 {
@@ -24,4 +23,3 @@ public class Item_inAir
     public string actualdeliveryTime;
     public string scheduleddevelopmentTime;
 }
-//yusuke edit
