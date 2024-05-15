@@ -13,7 +13,8 @@ public class DataGetter : MonoBehaviour
     private string url_Arrival = "https://api.odpt.org/api/v4/odpt:FlightInformationArrival?";
     private string url_Departure = "https://api.odpt.org/api/v4/odpt:FlightInformationDeparture?";
     private string url_operator_ANA = "odpt:operator=odpt.Operator:ANA&";
-    private string operator_JAL = "odpt:operator=odpt.Operator:JAL&";
+    private string url_operator_JAL = "odpt:operator=odpt.Operator:JAL&";
+    private string url_operator;
     private string url_FlightStatus_InAir = "odpt:flightStatus=odpt.FlightStatus:InAir&";
     public bool isStarted = false;
     public bool isRunning = false;
@@ -25,7 +26,10 @@ public class DataGetter : MonoBehaviour
 
     private void Start()
     {
-        Gettingdata(url_Departure + url_operator_ANA + url_FlightStatus_InAir + url_comsumerKey + yourComsumerKey);
+        url_operator = url_operator_ANA;
+        Gettingdata(url_Departure + url_operator + url_FlightStatus_InAir + url_comsumerKey + yourComsumerKey);
+        url_operator = url_operator_JAL;
+        Gettingdata(url_Departure + url_operator + url_FlightStatus_InAir + url_comsumerKey + yourComsumerKey);
         isStarted = true;
     }
     private void Update()
@@ -53,8 +57,10 @@ public class DataGetter : MonoBehaviour
         {
             yield return new WaitForSeconds(GettingSec);
             string nowTime = DateTime.Now.ToString("HH:mm");
-            Gettingdata(url_Departure + url_operator_ANA + "odpt:estimatedDepartureTime=" + nowTime + url_comsumerKey + yourComsumerKey);
-            
+            url_operator = url_operator_ANA;
+            Gettingdata(url_Departure + url_operator + "odpt:estimatedDepartureTime=" + nowTime + url_comsumerKey + yourComsumerKey);
+            url_operator = url_operator_JAL;
+            Gettingdata(url_Departure + url_operator + "odpt:estimatedDepartureTime=" + nowTime + url_comsumerKey + yourComsumerKey);
         }
     }
     private IEnumerator GetData(string URL)
@@ -79,7 +85,7 @@ public class DataGetter : MonoBehaviour
         foreach (JsonData oneData in jsonData["Header"])
         {
             string flightNum = (string)oneData["odpt:flightNumber"][0];
-            string url_search = url_Arrival + url_operator_ANA + "odpt:flightNumber=" + flightNum + url_comsumerKey + yourComsumerKey;
+            string url_search = url_Arrival + url_operator + "odpt:flightNumber=" + flightNum + url_comsumerKey + yourComsumerKey;
             UnityWebRequest responce2 = UnityWebRequest.Get(url_search);
             yield return responce2.SendWebRequest();
             string _setUpData2 = "";
