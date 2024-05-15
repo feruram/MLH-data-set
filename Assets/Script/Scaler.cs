@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Scaler : MonoBehaviour
 {
+    SizeManager sm;
+    void Start()
+    {
+        GameObject manager = GameObject.Find("SizeManager");
+        sm = manager.GetComponent<SizeManager>();
+    }
     void Update()
     {
-        this.transform.localScale = new Vector3(SizeManager.worldSize, SizeManager.worldSize, SizeManager.worldSize);
+        this.transform.localScale = new Vector3(sm.worldSize, sm.worldSize, sm.worldSize);
     }
 }
