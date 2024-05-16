@@ -61,6 +61,7 @@ public class KeyBoardInput : MonoBehaviour
             camera.transform.position = player.transform.position;
             camera.transform.rotation = player.transform.rotation;
         }
+        /*
         if (effectTime >= 2.0)
         {
             effectObj.SetActive(false);
@@ -73,6 +74,6 @@ public class KeyBoardInput : MonoBehaviour
                 }
 
             }
-        }
+        }*/
     }
 }

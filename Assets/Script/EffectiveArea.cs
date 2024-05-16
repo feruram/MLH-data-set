@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class EffectiveArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI text;
+    public int score=0;
+    void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("“–‚½‚Á‚½");
+        PlaneMaster pm = collision.gameObject.GetComponent<PlaneMaster>();
+        score += pm.myScore;
+        text.text = " score :" + score.ToString(); 
     }
 }
