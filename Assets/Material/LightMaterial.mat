@@ -80,5 +80,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
     - _EmissionColor: {r: 1.7885014, g: 1.7885014, b: 1.7885014, a: 1}
+=======
+    - _EmissionColor: {r: 49.026447, g: 47.63891, b: 47.63891, a: 1}
+>>>>>>> yusuke
   m_BuildTextureStacks: []

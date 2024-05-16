@@ -18,34 +18,45 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.25
+    value: 1
   threshold:
     overrideState: 1
-    value: 0.1
+    value: 1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
+<<<<<<< HEAD
     value: 65472
+=======
+    value: 1
+>>>>>>> yusuke
   diffusion:
     overrideState: 1
-    value: 5.3
+    value: 10
   anamorphicRatio:
     overrideState: 1
+<<<<<<< HEAD
     value: 0
   color:
     overrideState: 1
     value: {r: 0.6698113, g: 0.0031594948, b: 0.0031594948, a: 1}
+=======
+    value: 0.17
+  color:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>> yusuke
   fastMode:
     overrideState: 1
     value: 0
   dirtTexture:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
 --- !u!114 &11400000
 MonoBehaviour:
