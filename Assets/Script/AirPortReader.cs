@@ -21,14 +21,13 @@ public class AirPortReader : MonoBehaviour
     public List<AirPort> ports = new List<AirPort>();
     void Start()
     {
-        mag = parentObject.transform.localScale.x;
+        //mag = parentObject.transform.localScale.x;
         csvFile = Resources.Load("AirPortDatas") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
         while (reader.Peek() != -1)
         {
             string line = reader.ReadLine();
             portDatas.Add(line.Split(','));
-            Debug.Log("1");
         }
         Debug.Log("finished loading");
         Debug.Log(portDatas.Count);
@@ -41,14 +40,14 @@ public class AirPortReader : MonoBehaviour
             tempPort.name = _port;
             tempPort.lat = _lat;
             tempPort.lon = _lon;
-            ports.Add(tempPort);
             Vector3 point = new Vector3(20.2f * mag, 0, 0);
-            point = Quaternion.Euler(0, _lat, _lon) * point;
+            point = Quaternion.Euler(0, -_lon, _lat) * point;
             var portObj = Instantiate(portPrefab, point, Quaternion.identity);
             portObj.name = _port;
             portObj.transform.localScale = new Vector3(0.2f*mag, 0.2f*mag, 0.2f*mag);
             portObj.transform.SetParent(parentObject.transform, true);
-            
+            tempPort.transform = portObj.transform;
+            ports.Add(tempPort);
         }
         Debug.Log("plot finished");
         Vector3 hanedaPoint = new Vector3(20.2f * mag, 0, 0);
@@ -58,8 +57,12 @@ public class AirPortReader : MonoBehaviour
     }
     private void Update()
     {
+        SizeManager sm;
+        GameObject manager = GameObject.Find("SizeManager");
+        sm = manager.GetComponent<SizeManager>();
+        mag = sm.worldSize;
         Vector3 hanedaPoint = new Vector3(20.2f * mag, 0, 0);
-        hanedaPoint = Quaternion.Euler(0, haneda_lat, haneda_lon) * hanedaPoint;
+        hanedaPoint = Quaternion.Euler(0, -haneda_lon, haneda_lat) * hanedaPoint;
         hanedaObj.transform.position = hanedaPoint;
     }
 

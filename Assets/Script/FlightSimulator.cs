@@ -21,7 +21,7 @@ public class FlightSimulator : MonoBehaviour
                 destinationPort = port;
         }
         Vector3 planePos = new Vector3(0, 0, 0);
-        PlaneController myPlane = Instantiate(planePrefab, planePos, Quaternion.Euler(0, originPort.lat, originPort.lon)).GetComponent<PlaneController>();
+        PlaneMaster myPlane = Instantiate(planePrefab, planePos, Quaternion.Euler(0, originPort.lat, originPort.lon)).GetComponent<PlaneMaster>();
         myPlane.originPort = originPort;
         myPlane.destinationPort = destinationPort;
         myPlane.myInfo = inAir;

@@ -34,4 +34,5 @@ public class AirPort
     public float lat;
     public float lon;
     public string name;
+    public Transform transform;
 }
