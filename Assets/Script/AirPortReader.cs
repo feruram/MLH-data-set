@@ -44,7 +44,7 @@ public class AirPortReader : MonoBehaviour
             point = Quaternion.Euler(0, -_lon, _lat) * point;
             var portObj = Instantiate(portPrefab, point, Quaternion.identity);
             portObj.name = _port;
-            portObj.transform.localScale = new Vector3(0.2f*mag, 0.2f*mag, 0.2f*mag);
+            portObj.transform.localScale = new Vector3(0.02f*mag, 0.02f*mag, 0.02f*mag);
             portObj.transform.SetParent(parentObject.transform, true);
             tempPort.transform = portObj.transform;
             ports.Add(tempPort);
