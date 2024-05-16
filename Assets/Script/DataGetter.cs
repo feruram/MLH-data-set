@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using MiniJSON;
 using System.IO;
-using SimpleJSON;
 using System;
 using LitJson;
 

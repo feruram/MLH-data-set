@@ -17,9 +17,12 @@ public class PlaneMaster : MonoBehaviour
     public float progress;
     public TimeSpan progressTime;
     public TimeSpan totalTime;
+    public int myScore;
     // Start is called before the first frame update
     void Start()
     {
+        TimeSpan blue = new TimeSpan(4, 0, 0);
+        TimeSpan purple = new TimeSpan(8, 0, 0);
         StartCoroutine(DelayCoroutine());
         this.name = myInfo.flightNumber;
         totalTime = myInfo.arrival - myInfo.departure;
@@ -27,6 +30,15 @@ public class PlaneMaster : MonoBehaviour
         arr = myInfo.arrival.ToString();
         origin = myInfo.originPort;
         destination = myInfo.destinationPort;
+        myScore = 100;
+        if (totalTime > blue)
+        {
+            myScore = 400;
+        }
+        else if (totalTime > purple)
+        {
+            myScore = 800;
+        }
     }
     void Update()
     {
