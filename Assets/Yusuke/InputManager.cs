@@ -23,6 +23,6 @@ public class InputManager : MonoBehaviour
     }
     public void startButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("flight-catcher");
     }
 }
