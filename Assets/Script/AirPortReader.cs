@@ -21,7 +21,7 @@ public class AirPortReader : MonoBehaviour
     public List<AirPort> ports = new List<AirPort>();
     void Start()
     {
-        //mag = parentObject.transform.localScale.x;
+        mag = parentObject.transform.localScale.x;
         csvFile = Resources.Load("AirPortDatas") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
         while (reader.Peek() != -1)
@@ -40,11 +40,12 @@ public class AirPortReader : MonoBehaviour
             tempPort.name = _port;
             tempPort.lat = _lat;
             tempPort.lon = _lon;
-            Vector3 point = new Vector3(20.2f * mag, 0, 0);
+            Vector3 point = new Vector3(20.2f*mag, 0, 0);
             point = Quaternion.Euler(0, -_lon, _lat) * point;
             var portObj = Instantiate(portPrefab, point, Quaternion.identity);
+            portObj.transform.rotation = Quaternion.Euler(0, -_lon, _lat+90);
             portObj.name = _port;
-            portObj.transform.localScale = new Vector3(0.02f*mag, 0.02f*mag, 0.02f*mag);
+            portObj.transform.localScale = new Vector3(0.1f, 0.5f, 0.1f);
             portObj.transform.SetParent(parentObject.transform, true);
             tempPort.transform = portObj.transform;
             ports.Add(tempPort);
