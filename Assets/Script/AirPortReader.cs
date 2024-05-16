@@ -62,7 +62,7 @@ public class AirPortReader : MonoBehaviour
         GameObject manager = GameObject.Find("SizeManager");
         sm = manager.GetComponent<SizeManager>();
         mag = sm.worldSize;
-        Vector3 hanedaPoint = new Vector3(20.2f * mag, 0, 0);
+        Vector3 hanedaPoint = new Vector3(20.2f * mag, 0-186, 34);
         hanedaPoint = Quaternion.Euler(0, -haneda_lon, haneda_lat) * hanedaPoint;
         hanedaObj.transform.position = hanedaPoint;
     }
