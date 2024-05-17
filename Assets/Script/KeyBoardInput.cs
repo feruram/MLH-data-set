@@ -24,7 +24,7 @@ public class KeyBoardInput : MonoBehaviour
         effectObj = player.transform.GetChild(0).gameObject;
         one_sec = 1.0f;
         effectTime = 3.0f;
-        effectObj.SetActive(false);
+        //effectObj.SetActive(false);
     }
     void Update()
     {

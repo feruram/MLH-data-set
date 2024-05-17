@@ -6,11 +6,12 @@ public class EffectiveArea : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public int score=0;
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider col)
     {
         Debug.Log("“–‚½‚Á‚½");
-        PlaneMaster pm = collision.gameObject.GetComponent<PlaneMaster>();
-        score += pm.myScore;
+        //PlaneMaster pm = col.gameObject.GetComponent<PlaneMaster>();
+        //score += pm.myScore;
+        //pm.myScore = 0;
         text.text = " score :" + score.ToString(); 
     }
 }
